@@ -74,14 +74,42 @@ class Text extends Component {
             start={{
                 opacity: 0,
                 x: 503,
-                y: 450
+                y: 586
             }}
 
             enter={{
                 opacity: [1],
-                x: [773],
-                y: [450],
-                timing: {duration: 1500, ease: easePolyOut}
+                x: [273],
+                y: [586],
+                timing: {delay:300, duration: 1500, ease: easePolyOut}
+            }}
+        >
+            {({opacity, x, y}) =>{
+                return(
+                    <div 
+                        className="featured_second" 
+                        style={{
+                            opacity,
+                            transform: `translate(${x}px, ${y}px)`,
+                        }}
+                    >
+                        Championships
+                    </div>
+                )
+            }}
+        </Animate>
+    )
+
+    animatePlayer = () => (
+        <Animate 
+            show={true} 
+            start={{
+                opacity: 0
+            }}
+
+            enter={{
+                opacity: [1],
+                timing: {delay:300, duration: 1500, ease: easePolyOut}
             }}
         >
             {({opacity, x, y}) =>{
@@ -107,7 +135,7 @@ class Text extends Component {
                 {this.animateNumber()}
                 {this.animateFirst()}
                 {this.animateSecond()}
-                
+                {this.animatePlayer()}
             </div>
         );
     }
