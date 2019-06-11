@@ -16,7 +16,7 @@ class Text extends Component {
             enter={{
                 opacity: [1],
                 rotate: [360],
-                timing: {duration: 1000, ease: easePolyOut}
+                timing: {duration: 1500, ease: easePolyOut}
             }}
         >
             {({opacity, rotate}) =>{
@@ -47,21 +47,53 @@ class Text extends Component {
 
             enter={{
                 opacity: [1],
-                x: 503,
-                y: 450,
-                timing: {duration: 1000, ease: easePolyOut}
+                x: [273],
+                y: [450],
+                timing: {duration: 1500, ease: easePolyOut}
             }}
         >
-            {({opacity}) =>{
+            {({opacity, x, y}) =>{
                 return(
                     <div 
                         className="featured_first" 
                         style={{
                             opacity,
-                            transform: `translate(260px, 170px)`,
+                            transform: `translate(${x}px, ${y}px)`,
                         }}
                     >
-                        3
+                        League
+                    </div>
+                )
+            }}
+        </Animate>
+    )
+
+    animateSecond = () => (
+        <Animate 
+            show={true} 
+            start={{
+                opacity: 0,
+                x: 503,
+                y: 450
+            }}
+
+            enter={{
+                opacity: [1],
+                x: [773],
+                y: [450],
+                timing: {duration: 1500, ease: easePolyOut}
+            }}
+        >
+            {({opacity, x, y}) =>{
+                return(
+                    <div 
+                        className="featured_second" 
+                        style={{
+                            opacity,
+                            transform: `translate(${x}px, ${y}px)`,
+                        }}
+                    >
+                        Championships
                     </div>
                 )
             }}
@@ -74,6 +106,7 @@ class Text extends Component {
             <div className="featured_text">
                 {this.animateNumber()}
                 {this.animateFirst()}
+                {this.animateSecond()}
                 
             </div>
         );
