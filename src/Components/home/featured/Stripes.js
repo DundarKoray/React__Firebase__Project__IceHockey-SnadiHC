@@ -6,32 +6,14 @@ class Stripes extends Component {
 
     state = {
         stripes:[
-            {
-                background: '#98c5e9',
-                left: 120,
-                rotate: 25,
-                top: -260,
-                delay: 0
-            },
-            {
-                background: '#ffffff',
-                left: 360,
-                rotate: 25,
-                top: -397,
-                delay: 200
-            },
-            {
-                background: '#98c5e9',
-                left: 600,
-                rotate: 25,
-                top: -498,
-                delay: 400
-            }
+            {background: '#98c5e9', left: 120, rotate: 25, top: -260, delay: 0},
+            {background: '#ffffff', left: 360, rotate: 25, top: -397, delay: 200},
+            {background: '#98c5e9', left: 600, rotate: 25, top: -498, delay: 400}
         ]
     }
 
 
-    showStripes = () => {
+    showStripes = () => (
         this.state.stripes.map((stripe, i)=>(
             <Animate 
                 key={i} 
@@ -40,27 +22,36 @@ class Stripes extends Component {
                 start={{
                     background:'#ffffff',
                     opacity: 0,
-                    left: 0
+                    left: 0,
+                    rotate: 0,
+                    top: 0
                 }} 
                 
                 enter={{
-                    background: [stripe.background], 
+                    background: stripe.background, 
+                    opacity: [1],
+                    left: [stripe.left],
+                    rotate:[stripe.rotate],
+                    top:[stripe.top],
                     timing:{delay:500, duration: 200, ease: easePolyOut},
-                    opacity: 0,
-                    left: 0
                 }}
             >
 
-               {({ opacity, left, background})=>{
+               {({ opacity, left, rotate, top, background})=>{
                    return(
-                    <div className="stripe" style={{ background, opacity, transform: `rotate(0deg) translate(${left}px, 0px)` }}>
+                    <div 
+                        className="stripe" 
+                        style={{ 
+                            background, 
+                            opacity, 
+                            transform: `rotate(${rotate}deg) translate(${left}px, ${top}px)` }}>
 
                     </div>    
                    )
                }}
             </Animate>
         ))
-    }
+    )
 
     render() {
         return (
