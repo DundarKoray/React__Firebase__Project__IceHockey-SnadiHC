@@ -7,8 +7,8 @@ class Stripes extends Component {
     state = {
         stripes:[
             {background: '#98c5e9', left: 120, rotate: 25, top: -260, delay: 0},
-            {background: '#ffffff', left: 360, rotate: 25, top: -397, delay: 200},
-            {background: '#98c5e9', left: 600, rotate: 25, top: -498, delay: 400}
+            {background: '#ffffff', left: 360, rotate: 25, top: -397, delay: 300},
+            {background: '#98c5e9', left: 600, rotate: 25, top: -498, delay: 600}
         ]
     }
 
@@ -33,7 +33,7 @@ class Stripes extends Component {
                     left: [stripe.left],
                     rotate:[stripe.rotate],
                     top:[stripe.top],
-                    timing:{delay:500, duration: 200, ease: easePolyOut},
+                    timing:{delay:[stripe.delay], duration: 200, ease: easePolyOut},
                 }}
             >
 
