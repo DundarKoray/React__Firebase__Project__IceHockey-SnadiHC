@@ -6,9 +6,9 @@ class Stripes extends Component {
 
     state = {
         stripes:[
-            {background: '#98c5e9', left: 120, rotate: 25, top: -260, delay: 0},
-            {background: '#ffffff', left: 360, rotate: 25, top: -397, delay: 300},
-            {background: '#98c5e9', left: 600, rotate: 25, top: -498, delay: 600}
+            {background: '#98c5e9', left: 120, rotate: 25, top: -260, delay: 400},
+            {background: '#ffffff', left: 360, rotate: 25, top: -397, delay: 600},
+            {background: '#98c5e9', left: 600, rotate: 25, top: -498, delay: 800}
         ]
     }
 
@@ -30,10 +30,15 @@ class Stripes extends Component {
                 enter={{
                     background: stripe.background, 
                     opacity: [1],
-                    left: [stripe.left],
-                    rotate:[stripe.rotate],
-                    top:[stripe.top],
-                    timing:{delay:[stripe.delay], duration: 200, ease: easePolyOut},
+                    left: stripe.left,
+                    rotate:stripe.rotate,
+                    top:stripe.top,
+                    timing:{delay:stripe.delay, duration: 200, ease: easePolyOut},
+                    events:{
+                        end(){
+                            console.log('animation finished')
+                        }
+                    }
                 }}
             >
 
@@ -44,7 +49,9 @@ class Stripes extends Component {
                         style={{ 
                             background, 
                             opacity, 
-                            transform: `rotate(${rotate}deg) translate(${left}px, ${top}px)` }}>
+                            transform: `rotate(${rotate}deg) translate(${left}px, ${top}px)` 
+                        }}
+                    >
 
                     </div>    
                    )
