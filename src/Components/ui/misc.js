@@ -36,3 +36,15 @@ export const firebaseLooper = (snapshot) => {
     })
     return data
 }
+
+// this reverse the Array so the latest game shows first
+// export const reverseArray = (actualArray) => {
+//     let reversedArray = []
+
+//     for(let i = actualArray.lenght -1; i>=0; i--){
+//         reversedArray.push(actualArray[i])
+//     }
+
+//     return reversedArray
+// }
+

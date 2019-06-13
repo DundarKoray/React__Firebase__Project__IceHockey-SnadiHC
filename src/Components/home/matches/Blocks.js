@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { firebaseMatches } from '../../../firebase'
-import { firebaseLooper } from '../../ui/misc'
+import { firebaseLooper, reverseArray } from '../../ui/misc'
+
 class Blocks extends Component {
 
     state = {
@@ -11,7 +12,10 @@ class Blocks extends Component {
         // we have 12 matches in total in database but we wanna use only 6 of them.
         firebaseMatches.limitToLast(6).once('value').then((snapshot)=>{
             const matches = firebaseLooper(snapshot)
-            console.log(matches)
+            
+            this.setState({
+                matches: matches.reverse()
+            })
         })
     }
 
@@ -22,7 +26,7 @@ class Blocks extends Component {
     )
 
     render() {
-
+        console.log(this.state)
         return (
             <div className="home_matches">
                 {this.showMatches(this.state.matches)}
