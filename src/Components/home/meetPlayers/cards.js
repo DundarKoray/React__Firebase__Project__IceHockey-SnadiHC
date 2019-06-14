@@ -41,12 +41,12 @@ class HomeCards extends Component {
                 enter={{
                     left: [card.left], 
                     bottom: [card.bottom], 
-                    timing: {duration: 500, ease: easePolyOut}
+                    timing: {duration: 2000, ease: easePolyOut}
                 }}
             >
                 {({ left, bottom })=>{
                     return(
-                        <div style={{position: 'absolute', left, bottom}}>
+                        <div className="parent_player" style={{position: 'absolute', left, bottom}}>
                             <PlayerCard number="30" name="Nicolas" lastname="Otamendi" bck={Otamendi}/>
                         </div>
                     )

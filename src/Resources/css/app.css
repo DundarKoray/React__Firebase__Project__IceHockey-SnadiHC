@@ -417,6 +417,9 @@ footer .footer_discl {
     width: 300px;
     padding: 10px 10px 20px 10px;
     font-family: 'Righteous';
+    position: relative;
+    
+    
 }
 .player_card_wrapper .player_card_thmb {
     border: 1px solid #eeeeee;
@@ -452,7 +455,16 @@ footer .footer_discl {
     margin-top: 70px;
 }
 
+.player_card_wrapper:hover {
+    border: 1px solid #0d1831; 
+    animation: fronte .2s linear forwards; 
+}
+    
 
+@keyframes fronte {
+  from { z-index: 0; transform: scale(1.0); }
+  to { z-index: 4; transform: scale(1.1);  }
+}
 /*=============================
          PROMOTION
 ===============================*/
