@@ -14,7 +14,9 @@ const PromotionAnimation = () => {
                 </Zoom>
             </div>
             <div className="right">
-
+                <Zoom>
+                    <div style={{background: `url(${Jersey}) no-repeat`}}></div>
+                </Zoom>
             </div>
         </div>
     );
