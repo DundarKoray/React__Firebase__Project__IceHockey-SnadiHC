@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './Components/home'
 import SignIn from './Components/signin'
 
-import Dashboard from './Components/admin/dashboard'
+import Dashboard from './Components/admin/Dashboard'
 
 const Routes = (props) => {
   return (
