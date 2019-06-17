@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade'
 import FormField from '../../ui/formField'
 import { validate } from '../../ui/misc'
+import { firebasePromotions } from '../../../firebase'
+
 
 class Enroll extends Component {
     
@@ -85,8 +87,9 @@ class Enroll extends Component {
         }
 
         if(formIsValid){
-            console.log(dataToSubmit)
-            this.resetFormSuccess()
+            // console.log(dataToSubmit)
+            
+            // this.resetFormSuccess()
         }else {
             // console.log('error')
             this.setState({
