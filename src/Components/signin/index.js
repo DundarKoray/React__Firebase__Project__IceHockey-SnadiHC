@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { firebase } from '../../firebase'
 import FormField from '../ui/formField'
 import { validate } from '../ui/misc'
 
