@@ -76,7 +76,19 @@ class SignIn extends Component {
         if(formIsValid){
             // console.log(dataToSubmit)
            // check if the user is authenhicated or not
-            console.log(dataToSubmit)
+            firebase.auth()
+            .signInWithEmailAndPassword(
+                dataToSubmit.email,
+                dataToSubmit.password
+            ).then(()=>{
+                // console.log('user is auth');
+                this.props.history.push('/dashboard')
+                
+            }).catch(error =>{
+                this.setState({
+                    formError: true
+                })
+            })
         }else {
             // console.log('error')
             this.setState({
@@ -92,20 +104,10 @@ class SignIn extends Component {
                 <div className="signin_wrapper" style={{margin:'100px'}}>
                     <form onSubmit={(event)=> this.submitForm(event)}>
                         <h2>Please Login</h2>
-                        <FormField
-                            id={'email'}
-                            formdata={this.state.formdata.email}
-                            change={(element)=> this.updateForm(element)}
-                        />
-
-                        <FormField
-                            id={'password'}
-                            formdata={this.state.formdata.password}
-                            change={(element)=> this.updateForm(element)}
-                        />
-
+                        <FormField id={'email'} formdata={this.state.formdata.email} change={(element)=> this.updateForm(element)}/>
+                        <FormField id={'password'} formdata={this.state.formdata.password} change={(element)=> this.updateForm(element)}/>
+                        {this.state.formError ? <div className="error_label">Something is wrong, try again.</div>:null}
                         <button onClick={(event)=> this.submitForm(event)}>Log in</button>
-
                     </form>
                 </div>
             </div>
