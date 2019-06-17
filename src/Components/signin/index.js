@@ -40,12 +40,49 @@ class SignIn extends Component {
         }
     }
 
-    updateForm(){
-
+    updateForm(element){
+         // console.log(element)
+         const newFormdata = {...this.state.formdata}
+         const newElement = { ...newFormdata[element.id]}
+ 
+         newElement.value = element.event.target.value
+ 
+         let validData = validate(newElement)
+         // console.log(validData)
+         newElement.valid = validData[0]
+         newElement.validationMessage = validData[1]
+ 
+         newFormdata[element.id] = newElement
+         // console.log(newFormdata)
+ 
+         this.setState({
+             formError: false,
+             formdata: newFormdata
+         })
     }
 
-    submitForm(){
+    submitForm(event){
+        event.preventDefault()
 
+        let dataToSubmit = {}
+        let formIsValid = true
+
+        for(let key in this.state.formdata){
+            dataToSubmit[key] = this.state.formdata[key].value
+            formIsValid = this.state.formdata[key].valid && formIsValid
+        }
+
+        if(formIsValid){
+            // console.log(dataToSubmit)
+           // check if the user is authenhicated or not
+            console.log(dataToSubmit)
+        }else {
+            // console.log('error')
+            this.setState({
+                formError: true
+            })
+        }
+        
     }
 
     render() {
