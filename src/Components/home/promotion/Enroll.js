@@ -50,7 +50,7 @@ class Enroll extends Component {
         })
     }
 
-    resetFormSuccess(){
+    resetFormSuccess(type){
         const newFormdata = {...this.state.formdata}
 
         for(let key in newFormdata){
@@ -62,7 +62,7 @@ class Enroll extends Component {
         this.setState({
             formError: false,
             formdata: newFormdata,
-            formSuccess: 'Congrats, your email has been submitted.'
+            formSuccess: type ? 'Congrats, your email has been submitted.' : 'This email is already registered!'
         })
         this.clearSuccessMessage()
     }
@@ -72,7 +72,7 @@ class Enroll extends Component {
             this.setState({
                formSuccess: '' 
             })
-        }, 2000)
+        }, 3000)
     }
 
     submitForm(event){
@@ -88,8 +88,17 @@ class Enroll extends Component {
 
         if(formIsValid){
             // console.log(dataToSubmit)
+            //check if user is already in the database
+            firebasePromotions.orderByChild('email').equalTo(dataToSubmit.email).once('value')
+            .then((snapshot)=>{
+                if(snapshot.val() === null){
+                    firebasePromotions.push(dataToSubmit)
+                    this.resetFormSuccess(true)
+                }else{
+                    this.resetFormSuccess(false)
+                }
+            })
             
-            // this.resetFormSuccess()
         }else {
             // console.log('error')
             this.setState({
