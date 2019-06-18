@@ -8,12 +8,24 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+import { firebaseMatches } from '../../../firebase'
+import { firebaseLooper} from '../../ui/misc'
 
 class AdminMatches extends Component {
+
+    state = {
+        isloading: true,
+        matches: []
+    }
+
     render() { 
         return (
             <AdminLayout>
-                table
+                <div className="admin_progress">
+                    {this.state.isloading ? <CircularProgress/> : ''}
+                </div>
             </AdminLayout>
         );
     }
