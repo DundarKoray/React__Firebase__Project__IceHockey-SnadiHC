@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import AdminLayout from '../../../Hoc/AdminLayout'
+
 import FormField from '../../ui/formField'
 import { validate } from '../../ui/misc'
+
+import { firebaseTeams, firebaseDB, firebaseMatches } from '../../../firebase'
+import { firebaseLooper } from '../../ui/misc'
 
 class AddEditMatch extends Component {
 
@@ -181,6 +185,20 @@ class AddEditMatch extends Component {
             formError: false,
             formdata: newFormdata
         })
+    }
+
+    componentDidMount(){
+        const matchId = this.props.match.params.id
+        // console.log(matchId)
+        if(!matchId){
+            //Add match
+        }else {
+            firebaseDB.ref(`matches/${matchId}`).once('value')
+            .then((snapshot)=>{
+                const match = snapshot.val()
+                console.log(match)
+            })
+        }
     }
 
     render() {
