@@ -8,7 +8,7 @@ import PublicRoute from './Components/authRoutes/publicRoutes'
 import Home from './Components/home'
 import SignIn from './Components/signin'
 
-import Dashboard from './Components/admin/dashboard'
+import Dashboard from './Components/admin/Dashboard'
 import AdminMatches from './Components/admin/matches'
 import AddEditMatch from './Components/admin/matches/addEditMatch'
 
