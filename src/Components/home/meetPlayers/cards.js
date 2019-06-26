@@ -8,41 +8,32 @@ class HomeCards extends Component {
 
     state = {
         cards:[
-            {
-                bottom: 90,
-                left: 300
-            },
-            {
-                bottom: 60,
-                left: 200
-            },
-            {
-                bottom: 30,
-                left: 100
-            },
-            {
-                bottom: 0,
-                left: 0
-            }
+            {bottom: 90, left: 300},
+            {bottom: 60, left: 200},
+            {bottom: 30, left: 100},
+            {bottom: 0, left: 0}
         ]
     }
 
     showAnimateCards = () => (
+        
+        
         this.state.cards.map((card, i)=>(
+            
             <Animate 
-                key={i} 
-                show={this.props.show} 
-                
-                start={{
-                    left:0, 
-                    bottom:0
-                }} 
-                
-                enter={{
-                    left: [card.left], 
-                    bottom: [card.bottom], 
-                    timing: {duration: 2000, ease: easePolyOut}
-                }}
+            key={i} 
+            show={this.props.show} 
+            
+            start={{
+                left:0, 
+                bottom:0
+            }} 
+            
+            enter={{
+                left: [card.left], 
+                bottom: [card.bottom], 
+                timing: {duration: 2000, ease: easePolyOut}
+            }}
             >
                 {({ left, bottom })=>{
                     return(
@@ -51,13 +42,14 @@ class HomeCards extends Component {
                         </div>
                     )
                 }}
-            </Animate>
-        ))
-    )
-
-    render() {
-        return (
-            <div>
+                </Animate>
+                ))
+                )
+                
+                
+                render() {
+                    return (
+                        <div>
                 {this.showAnimateCards()}
             </div>
         );
