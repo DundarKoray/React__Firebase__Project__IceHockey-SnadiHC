@@ -145,7 +145,7 @@ class AddEditMatch extends Component {
                 showlabel: true
             },
             final:{
-                element: 'input',
+                element: 'select',
                 value: '',
                 config:{
                     label: 'Game played ?',
