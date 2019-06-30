@@ -17,7 +17,7 @@ class AdminPlayers extends Component {
 
     state = {
         isloading: true,
-        matches: []
+        players: []
     }
 
     componentDidMount(){
@@ -33,12 +33,50 @@ class AdminPlayers extends Component {
 
     render() {
 
-        console.log(this.state)
+        // console.log(this.state)
 
         return (
-            <div>
-                <h1>Hello</h1>
-            </div>
+            <AdminLayout>
+                <div>
+                    <Paper>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>First name</TableCell>
+                                    <TableCell>Last name</TableCell>
+                                    <TableCell>Number</TableCell>
+                                    <TableCell>Position</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {this.state.players ? this.state.players.map((player, i)=>(
+                                    <TableRow key={i}>
+                                        <TableCell>
+                                            <Link to={`/admin_players/add_players/${player.id}`}>
+                                                {player.name}
+                                            </Link>
+                                        </TableCell>
+                                        <TableCell>
+                                        <Link to={`/admin_players/add_players/${player.id}`}>
+                                                {player.lastname}
+                                            </Link>
+                                        </TableCell>
+                                        <TableCell>
+                                            {player.number}
+                                        </TableCell>
+                                        <TableCell>
+                                        {player.position}
+                                        </TableCell>
+                                    </TableRow>
+                                )) : null}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                    <div className="admin_progress">
+                        {this.state.isloading ? <CircularProgress thickness={7} style={{color: '#98c5e9'}}/> : ''}
+                    </div>
+                </div>
+            </AdminLayout>
         );
     }
 }
