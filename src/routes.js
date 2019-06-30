@@ -11,7 +11,7 @@ import SignIn from './Components/signin'
 import Dashboard from './Components/admin/Dashboard'
 import AdminMatches from './Components/admin/matches'
 import AddEditMatch from './Components/admin/matches/addEditMatch'
-import AdminPlayers from './Components/admin/players/'
+import AdminPlayers from './Components/admin/players'
 
 const Routes = (props) => {
   return (
