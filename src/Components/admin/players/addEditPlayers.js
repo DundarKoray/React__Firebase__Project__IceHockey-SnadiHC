@@ -155,6 +155,10 @@ class AddEditPlayers extends Component {
     }
 
     resetImage = () => {
+
+    }
+
+    storeFilename = () => {
         
     }
 
@@ -175,6 +179,7 @@ class AddEditPlayers extends Component {
                                     defaultImg={this.state.defaultImg}
                                     defaultImgName={this.state.formdata.image.value}
                                     resetImage={()=> this.resetImage()}
+                                    filename={(filename)=> this.storeFilename(filename)}
                                 />
 
                                 <FormField 
