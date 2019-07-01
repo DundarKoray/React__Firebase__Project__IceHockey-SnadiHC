@@ -90,7 +90,7 @@ class AddEditPlayers extends Component {
                 validation:{
                     required: true
                 },
-                valid: true
+                valid: false
             }
         }
         
@@ -108,12 +108,16 @@ class AddEditPlayers extends Component {
         }
     }
 
-    updateForm(element){
+    updateForm(element, content = ''){
         // console.log(element)
         const newFormdata = {...this.state.formdata}
         const newElement = { ...newFormdata[element.id]}
 
-        newElement.value = element.event.target.value
+        if(content === ''){
+            newElement.value = element.event.target.value
+        } else {
+            newElement.value = content
+        }
 
         let validData = validate(newElement)
         // console.log(validData)
@@ -155,11 +159,17 @@ class AddEditPlayers extends Component {
     }
 
     resetImage = () => {
-
+        const newFormdata = {...this.state.formdata}
+        newFormdata['image'].value = ''
+        newFormdata['image'].valid = false 
+        this.setState({
+            defaultImg: '',
+            formdata: newFormdata
+        })
     }
 
-    storeFilename = () => {
-
+    storeFilename = (filename) => {
+        this.updateForm({id:'image'}, filename)
     }
 
     render() {
@@ -167,9 +177,7 @@ class AddEditPlayers extends Component {
             <div>
                 <AdminLayout>
                     <div className="editplayers_dialog_wrapper">
-                        <h2>
-                            {this.state.formType}
-                        </h2>
+                        <h2>{this.state.formType}</h2>
                         <div>
                             <form onSubmit={(event)=> this.submitForm(event)}>
 
