@@ -96,14 +96,43 @@ class AddEditPlayers extends Component {
         
     }
 
+    updateFields = (player, playerId, type, defaultImg) => {
+        const newFormdata = {...this.state.formdata}
+        
+        for(let key in newFormdata){
+            newFormdata[key].value = player[key]
+            newFormdata[key].valid = true
+        }
+
+        this.setState({
+            playerId,
+            defaultImg,
+            formType,
+            formdata: newFormdata
+        })
+    }
+
     componentDidMount(){
         const playerId = this.props.match.params.id
 
         if(!playerId){
             /// add player
+            this.setState({
+                formType: 'Add Player'
+            })
 
         }else {
             /// edit player
+            firebaseDB.ref(`players/${playerId}`).once('value')
+            .then(snapshot => {
+                const playerData = snapshot.val()
+
+                firebase.storage().ref('players')
+                .child(playerData.image).getDownloadURL()
+                .then( url => {
+                    this.updateFields(playerData, playerId, 'Edit player', url)
+                })
+            })
 
         }
     }
