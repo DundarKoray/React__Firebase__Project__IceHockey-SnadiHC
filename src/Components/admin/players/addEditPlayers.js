@@ -7,8 +7,6 @@ import { validate } from '../../ui/misc'
 import Fileuploader from '../../ui/fileUploader'
 import { firebasePlayers, firebaseDB, firebase } from '../../../firebase'
 
-
-
 class AddEditPlayers extends Component {
 
     state= {
@@ -96,7 +94,7 @@ class AddEditPlayers extends Component {
         
     }
 
-    updateFields = (player, playerId, type, defaultImg) => {
+    updateFields = (player, playerId, formType, defaultImg) => {
         const newFormdata = {...this.state.formdata}
         
         for(let key in newFormdata){
@@ -127,10 +125,15 @@ class AddEditPlayers extends Component {
             .then(snapshot => {
                 const playerData = snapshot.val()
 
-                firebase.storage().ref('players')
+                firebase.storage().ref('player')
                 .child(playerData.image).getDownloadURL()
                 .then( url => {
                     this.updateFields(playerData, playerId, 'Edit player', url)
+                }).catch( e => {
+                    this.updateFields({
+                        ...playerData,
+                        image:''
+                    }, playerId, 'Edit player', '')
                 })
             })
 
@@ -162,6 +165,17 @@ class AddEditPlayers extends Component {
         })
     }
 
+    successForm = (message) => {
+        this.setState({
+            formSuccess: message
+        })
+        setTimeout(()=>{
+            this.setState({
+                formSuccess:''
+            })
+        },2000)
+    }
+
     submitForm(event){
         event.preventDefault()
 
@@ -173,12 +187,15 @@ class AddEditPlayers extends Component {
             formIsValid = this.state.formdata[key].valid && formIsValid
         }
 
-        
-
         if(formIsValid){
             // console.log(dataToSubmit)
             if(this.state.formType === 'Edit player'){
-
+                firebaseDB.ref(`players/${this.state.playerId}`)
+                .update(dataToSubmit).then( ()=>{
+                    this.successForm('Update correctly')
+                }).catch(e => {
+                    this.setState({formError: true})
+                })
             } else {
                 firebasePlayers.push(dataToSubmit).then(() =>{
                     this.props.history.push('/admin_players')
@@ -213,7 +230,6 @@ class AddEditPlayers extends Component {
 
     render() {
         return (
-            <div>
                 <AdminLayout>
                     <div className="editplayers_dialog_wrapper">
                         <h2>{this.state.formType}</h2>
@@ -265,8 +281,7 @@ class AddEditPlayers extends Component {
                         </div>
                     </div>
                 </AdminLayout>
-            </div>
-        );
+        )
     }
 }
 

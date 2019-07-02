@@ -16,7 +16,6 @@ import AddEditPlayers from './Components/admin/players/addEditPlayers'
 
 const Routes = (props) => {
   return (
-    <div>
       <Layout>
         <Switch>
           <PrivateRoute {...props} path="/admin_players/add_players" exact component={AddEditPlayers}/>
@@ -28,10 +27,8 @@ const Routes = (props) => {
           <PrivateRoute {...props} path="/dashboard" exact component={Dashboard}/>
           <PublicRoute {...props} restricted={true} path="/sign_in" exact component={SignIn}/>
           <PublicRoute {...props} restricted={false} path="/" exact component={Home}/>
-          
         </Switch>
       </Layout>
-    </div>
   )
 }
 
