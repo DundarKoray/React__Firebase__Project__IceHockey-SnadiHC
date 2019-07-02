@@ -419,7 +419,9 @@ footer .footer_discl {
     padding: 10px 10px 20px 10px;
     font-family: 'Righteous';
     position: relative;
-    
+    transition: all .2s;
+    /* opacity: 0.9;
+     */
     
     
 }
@@ -458,14 +460,18 @@ footer .footer_discl {
 }
 
 .player_card_wrapper:hover {
-    border: 1px solid #0d1831; 
-    animation: fronte .5s linear forwards; 
+    border: 1px solid #e4e4e4;
+    animation: fronte .3s linear forwards; 
+    /* opacity: 1; */
+    -webkit-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.1);
 }
     
 
 @keyframes fronte {
   from { z-index: 0; transform: scale(1.0); }
-  to { z-index: 4; transform: scale(1.1);  }
+  to { z-index: 4; transform: scale(1.05);  }
 }
 /*=============================
          PROMOTION
