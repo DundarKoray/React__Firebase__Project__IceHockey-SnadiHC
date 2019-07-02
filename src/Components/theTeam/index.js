@@ -48,7 +48,7 @@ class TheTeam extends Component {
         this.state.players ?
             this.state.players.map((player, i)=>{
                 return player.position === category ?
-                    <Fade left key={i}>
+                    <Fade left delay={i*20} key={i}>
                         <div className="item">
                             <PlayerCard 
                                 number={player.number} 
@@ -75,9 +75,19 @@ class TheTeam extends Component {
                     <div>
                         <div className="team_category_wrapper">
                             <div className="title">Keepers</div>
-                            <div className="team_cards">
-                                {this.showplayersByCategory('Keeper')}
-                            </div>
+                            <div className="team_cards">{this.showplayersByCategory('Keeper')}</div>
+                        </div>
+                        <div className="team_category_wrapper">
+                            <div className="title">Defence</div>
+                            <div className="team_cards">{this.showplayersByCategory('Defence')}</div>
+                        </div>
+                        <div className="team_category_wrapper">
+                            <div className="title">Midfield</div>
+                            <div className="team_cards">{this.showplayersByCategory('Midfield')}</div>
+                        </div>
+                        <div className="team_category_wrapper">
+                            <div className="title">Stikers</div>
+                            <div className="team_cards">{this.showplayersByCategory('Striker')}</div>
                         </div>
                     </div>
                     :null
