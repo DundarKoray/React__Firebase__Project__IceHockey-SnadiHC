@@ -322,11 +322,16 @@ footer .footer_discl {
 }
 
 .match_box_big .block .team,
+.match_box_big .block .score,
 .match_box_big .block .result {
     font-size: 21px;
     line-height: 51px;
     margin-left: 18px;
     font-weight: 300;
+}
+
+.match_box_big .block .team {
+    flex-grow: 1;
 }
 
 .match_box_big .block .result {
@@ -339,10 +344,17 @@ footer .footer_discl {
     padding-left: 10px;
     font-weight: 300;
     color: #5e5e5e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .block_wraper.nfo div {
-    margin: 5px 0px;
+    margin: 5px 0px; 
+}
+
+.block_wraper {
+    width: 250px;
 }
 
 .match_filters {

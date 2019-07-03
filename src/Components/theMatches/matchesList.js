@@ -53,13 +53,13 @@ class MatchesList extends Component {
                                         <div className="icon" style={{background:`url(/images/team_icons/${data.localThmb}.png)`}}>
                                         </div>
                                         <div className="team">{data.local}</div>
-                                        <div className="team">{data.resultLocal}</div>
+                                        <div className="score"><strong>{data.resultLocal}</strong></div>
                                     </div>
                                     <div className="block">
                                         <div className="icon" style={{background:`url(/images/team_icons/${data.awayThmb}.png)`}}>
                                         </div>
                                         <div className="team">{data.away}</div>
-                                        <div className="team">{data.resultAway}</div>
+                                        <div className="score"><strong>{data.resultAway}</strong></div>
                                     </div>
                                 </div>
                                 <div className="block_wraper nfo">
