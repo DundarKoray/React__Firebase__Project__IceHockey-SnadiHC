@@ -125,8 +125,10 @@ button {
 }
 
 .not_found_container {
-    text-align: center;
-    margin-top: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 20px;
     background-size: 5px 5px !important;
     min-height: 100vh;
