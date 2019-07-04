@@ -265,7 +265,7 @@ footer .footer_discl {
 .match_block .match_wrapper .match_bottom .left {
     background: #ffffff; 
     font-family: 'Righteous', cursive;
-    flex-grow: 1;
+    flex-grow: 0;
     margin-right: 5px;
     padding: 10px;
 }
@@ -564,7 +564,8 @@ footer .footer_discl {
 }
 
 .the_matches_wrapper .right {
-   width:400px;
+   width:700px;
+   /* flex-grow: 1; */
 }
 
 .league_table_wrapper {

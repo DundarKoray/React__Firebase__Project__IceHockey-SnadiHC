@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 const style ={
     cell:{
-        padding: '4px 16px 4px 11px',
+        padding: '13px 16px 13px 11px',
         borderBottom: '1px solid #ffffff',
         color: '#ffffff',
         textAlign: 'center'
