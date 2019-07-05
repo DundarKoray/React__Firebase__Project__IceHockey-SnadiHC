@@ -13,6 +13,15 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { firebaseMatches } from '../../../firebase'
 import { firebaseLooper} from '../../ui/misc'
 
+/**
+ * This is a functiom sdbfskjdhfk
+ * 
+ * @param {number} num 
+ * @returns number
+ */
+const testFunc = (num)=>{
+    return num*2
+}
 class AdminMatches extends Component {
 
     state = {
@@ -60,6 +69,7 @@ class AdminMatches extends Component {
                                                 ?<span className="matches_tag_red">Final</span>
                                                 :<span className="matches_tag_green">Not played yes</span>
                                             }
+                                            {testFunc(2)}
                                         </TableCell>
                                     </TableRow>
                                 )) : null}
