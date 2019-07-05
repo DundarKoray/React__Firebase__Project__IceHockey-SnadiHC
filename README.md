@@ -9,7 +9,7 @@ Click the link below to see the app. <br/>
 [firebase](https://man-city-8faac.firebaseapp.com/)
 
 # Preview
-![Rolling Dice - Preview](./src/preview.gif)
+![Rolling Dice - Preview](./src/images/preview.gif)
 
 # Author
 
