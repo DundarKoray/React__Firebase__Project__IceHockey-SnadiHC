@@ -265,7 +265,7 @@ footer .footer_discl {
 .match_block .match_wrapper .match_bottom .left {
     background: #ffffff; 
     font-family: 'Righteous', cursive;
-    flex-grow: 0;
+    flex-grow: 1;
     margin-right: 5px;
     padding: 10px;
 }
