@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { easePolyOut } from 'd3-ease'
 import Animate from 'react-move/Animate'
-import Otamendi from '../../../Resources/images/players/Otamendi.png'
+import Lassi from '../../../Resources/images/players/Lassi.jpg'
 import PlayerCard from '../../ui/playerCard'
 
 class HomeCards extends Component {
@@ -38,7 +38,7 @@ class HomeCards extends Component {
                 {({ left, bottom })=>{
                     return(
                         <div className="parent_player" style={{position: 'absolute', left, bottom}}>
-                            <PlayerCard number="30" name="Nicolas" lastname="Otamendi" bck={Otamendi}/>
+                            <PlayerCard number="30" name="Lassi" lastname="Lankinen" bck={Lassi}/>
                         </div>
                     )
                 }}

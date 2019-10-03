@@ -466,7 +466,7 @@ footer .footer_discl {
 .player_card_wrapper .player_card_name span { 
     display: block;
     font-size: 25px;
-    color: #0d1831;
+    color: #000000;
 }
 
 .home_text_wrapper {
@@ -575,8 +575,8 @@ footer .footer_discl {
     padding: 22px;
     font-size: 22px;
     color: #ffffff;
-    background: #f5ee31;
-    border-bottom: 1px solid #01285e;
+    background: #000000;
+    border-bottom: 1px solid #f5ee31;
 }
 
 .the_matches_wrapper .progress {
@@ -599,7 +599,7 @@ footer .footer_discl {
 .admin_container .admin_left_nav {
     min-height: 100vh;
     background: #282828;
-    border-right: 2px solid #01285e;
+    border-right: 2px solid #f5ee31;
 }
 
 .admin_container  .admin_right {
@@ -713,7 +713,7 @@ footer .footer_discl {
 .user_dashboard {
     font-size: 60px;
     font-family: 'Righteous', cursive;
-    color: #d5ebfe;
+    color: ##f5ee31;
     text-align: center;
     margin-top: 200px;
 }
