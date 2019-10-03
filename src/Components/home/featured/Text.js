@@ -29,7 +29,7 @@ class Text extends Component {
                             
                         }}
                     >
-                        3
+                        {/* 3 */}
                     </div>
                 )
             }}
@@ -61,7 +61,7 @@ class Text extends Component {
                             transform: `translate(${x}px, ${y}px)`,
                         }}
                     >
-                        League
+                        SNADI
                     </div>
                 )
             }}
@@ -93,7 +93,7 @@ class Text extends Component {
                             transform: `translate(${x}px, ${y}px)`,
                         }}
                     >
-                        Championships
+                        HC
                     </div>
                 )
             }}
