@@ -274,7 +274,7 @@ class AddEditPlayers extends Component {
                                 }
                                 <div className="admin_submit">
                                     <button onClick={(event)=> this.submitForm(event)}>
-                                        {this.state.formType}
+                                        Save
                                     </button>
                                 </div>
                             </form>

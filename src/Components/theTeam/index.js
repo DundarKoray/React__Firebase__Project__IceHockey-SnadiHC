@@ -68,7 +68,8 @@ class TheTeam extends Component {
         return (
             <div className="the_team_container"
                 style={{
-                    background: `url(${Stripes}) repeat`
+                    // background: `url(${Stripes}) repeat`
+                    background: `#777`
                 }}
             >
                 {   !this.state.loading ? 

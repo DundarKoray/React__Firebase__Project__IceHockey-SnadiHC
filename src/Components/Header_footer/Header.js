@@ -13,10 +13,10 @@ class Header extends Component {
             <AppBar
                 position="fixed"
                 style={{
-                    backgroundColor:'#98c5e9',
+                    backgroundColor:'#f5ee31',
                     padding: '10px 0',
                     boxShadow: 'none',
-                    borderBottom: '2px solid #00285e'
+                    borderBottom: '2px solid #000000'
                 }}
             >
                 <Toolbar style={{display:'flex'}}>
@@ -27,10 +27,10 @@ class Header extends Component {
                     </div>
 
                     <Link to="/the_team">
-                        <Button color="inherit">The team</Button>
+                        <Button color="#000000">The team</Button>
                     </Link>
                     <Link to="/the_matches">
-                        <Button color="inherit">Matches</Button>
+                        <Button color="#000000">Matches</Button>
                     </Link>
 
                 </Toolbar>
