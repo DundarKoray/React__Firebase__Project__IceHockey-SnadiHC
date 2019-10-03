@@ -8,10 +8,10 @@ class HomeCards extends Component {
 
     state = {
         cards:[
-            {bottom: 90, left: 300},
             {bottom: 60, left: 200},
             {bottom: 30, left: 100},
-            {bottom: 0, left: 0}
+            {bottom: 0, left: 0},
+            {bottom: -30, left: -100}
         ]
     }
 
