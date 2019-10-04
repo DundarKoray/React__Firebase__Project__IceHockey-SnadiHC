@@ -1,0 +1,43 @@
+[debug] [2019-10-04T08:31:15.301Z] ----------------------------------------------------------------------
+[debug] [2019-10-04T08:31:15.304Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\koray\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-10-04T08:31:15.304Z] CLI Version:   7.4.0
+[debug] [2019-10-04T08:31:15.304Z] Platform:      win32
+[debug] [2019-10-04T08:31:15.304Z] Node Version:  v10.15.3
+[debug] [2019-10-04T08:31:15.306Z] Time:          Fri Oct 04 2019 11:31:15 GMT+0300 (Eastern European Summer Time)
+[debug] [2019-10-04T08:31:15.306Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-04T08:31:15.317Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-04T08:31:15.319Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\koray\Desktop\webdevelopmentcourse\mancity
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using man-city-8faac.
+[debug] [2019-10-04T08:31:22.044Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/man-city-8faac  
+ 
+[debug] [2019-10-04T08:31:22.360Z] <<< HTTP RESPONSE 200
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
