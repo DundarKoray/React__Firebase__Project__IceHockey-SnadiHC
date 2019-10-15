@@ -11,6 +11,12 @@ Click the link below to see the app. <br/>
 # Preview
 ![Rolling Dice - Preview](./src/Resources/images/preview.png)
 
+# Technologies
+  * React
+  * Material UI
+  * Animations
+  * Firebase
+
 # Author
 
 Koray Dündar
