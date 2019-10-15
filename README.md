@@ -6,7 +6,7 @@ ManCity App has two main sections, public and admin. Only authenticated users ca
 
 # Demo
 Click the link below to see the app. <br/>
-[firebase](https://man-city-8faac.firebaseapp.com/)
+[firebase](https://man-city-8faac.web.app/)
 
 # Preview
 ![Rolling Dice - Preview](./src/Resources/images/preview.png)
