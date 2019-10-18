@@ -71,8 +71,8 @@ class AddEditPlayers extends Component {
                     options: [
                         {key: "Keeper",value:"Keeper"},
                         {key: "Defence",value:"Defence"},
-                        {key: "Midfield",value:"Midfield"},
-                        {key: "Striker",value:"Striker"}
+                        {key: "Center",value:"Center"},
+                        {key: "Winger",value:"Winger"}
                     ]
                 },
                 validation:{
