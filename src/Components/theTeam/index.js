@@ -66,12 +66,7 @@ class TheTeam extends Component {
     render() {
         console.log(this.state.players)
         return (
-            <div className="the_team_container"
-                style={{
-                    // background: `url(${Stripes}) repeat`
-                    background: `#777`
-                }}
-            >
+            <div className="the_team_container">
                 {   !this.state.loading ? 
                     <div>
                         <div className="team_category_wrapper">

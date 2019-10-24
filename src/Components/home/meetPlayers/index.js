@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Stripes from '../../../Resources/images/stripes.png'
+import Stripes from '../../../Resources/images/stripes2.png'
 import { Tag } from '../../ui/misc'
 import Reveal from 'react-reveal/Reveal'
 import HomeCards from './cards'
@@ -20,7 +20,8 @@ class MeetPlayers extends Component {
                     })
                 }} 
             > 
-                <div className="home_meetplayers" style={{background: `#ffffff url(${Stripes})`}}>
+                {/* <div className="home_meetplayers" style={{background: `#ffffff url(${Stripes})`}}> */}
+                <div className="home_meetplayers">
                     <div className="container">
                         <div className="home_meetplayers_wrapper">
                             <div className="home_card_wrapper">

@@ -10,7 +10,7 @@ const Home = () => {
             <Featured/>
             <Matches/>
             <MeetPlayers/>
-            <Promotion/>
+            {/* <Promotion/> */}
         </div>
     );
 };
