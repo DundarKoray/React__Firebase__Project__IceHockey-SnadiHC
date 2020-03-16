@@ -1,4 +1,4 @@
-# ManCity React App
+# IceHockey Team React App
 
 The main purpose of building this app was to get advanced in React, components, classes, states, props, routes, animations, importing 3rd party packages and also to learn how to retrive data, authentication through Firebase.
 
