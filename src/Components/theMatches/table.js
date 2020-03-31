@@ -39,12 +39,18 @@ class LeagueTable extends Component {
         pos ?
             pos.map((pos,i)=>(
                 <TableRow key={i}>
-                    <TableCell style={style.cell}>{i+1}</TableCell>
+                    {/* <TableCell style={style.cell}>{i+1}</TableCell>
                     <TableCell style={style.cell}>{pos.team}</TableCell>
                     <TableCell  style={style.cell}>{pos.w}</TableCell>
                     <TableCell  style={style.cell}>{pos.d}</TableCell>
                     <TableCell  style={style.cell}>{pos.l}</TableCell>
-                    <TableCell  style={style.cell}>{pos.pts}</TableCell>
+                    <TableCell  style={style.cell}>{pos.pts}</TableCell> */}
+                    <TableCell style={style.cell}></TableCell>
+                    <TableCell style={style.cell}></TableCell>
+                    <TableCell  style={style.cell}></TableCell>
+                    <TableCell  style={style.cell}></TableCell>
+                    <TableCell  style={style.cell}></TableCell>
+                    <TableCell  style={style.cell}></TableCell>
                 </TableRow>
             ))
             :null
@@ -58,7 +64,7 @@ class LeagueTable extends Component {
         return (
             <div className="league_table_wrapper">
                 <div className="title">
-                    League Table
+                    League Table (currently not available)
                 </div>
                 <div style={{background: '#777'}}>
                 <Table>
