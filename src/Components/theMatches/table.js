@@ -45,7 +45,7 @@ class LeagueTable extends Component {
                     <TableCell  style={style.cell}>{pos.d}</TableCell>
                     <TableCell  style={style.cell}>{pos.l}</TableCell>
                     <TableCell  style={style.cell}>{pos.pts}</TableCell> */}
-                    <TableCell style={style.cell}></TableCell>
+                    <TableCell style={style.cell}>{i+1}</TableCell>
                     <TableCell style={style.cell}></TableCell>
                     <TableCell  style={style.cell}></TableCell>
                     <TableCell  style={style.cell}></TableCell>
